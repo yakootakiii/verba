@@ -1,0 +1,63 @@
+GCash Groups + ChibogPay: Shared Expenses Made Simple
+
+Problem Statement
+
+Sharing expenses is part of Filipino daily life — from barkada hangouts to groceries, shared apartments, and OFWs sending money home. But tracking who paid, who owes, and how to settle often leads to confusion, delays, or tension. Payments made through GCash are easily forgotten, causing incomplete settlements and awkward follow-ups.
+
+Solution: GCash Groups + ChibogPay
+
+GCash Groups allows users to create shared wallets and budgets for any purpose: trips, family expenses, rent, or remittances. Integrated with ChibogPay, it automatically tracks and splits food-related expenses, making group spending transparent and stress-free.
+
+How It Works
+
+Create a Group Wallet
+Set up shared wallets for any group and add members by GCash number. Everyone can add expenses, view transactions, and attach receipts.
+
+Expense Tracking and Auto-Split
+Log expenses and split them equally or by custom ratios. The app displays balances and sends reminders to unsettled members.
+
+ChibogPay Integration
+Identifies food-related transactions and suggests automatic splitting for the group. Adds expenses to the shared log for one-tap settlement.
+
+Family Group Mode
+Designed for households or OFW families. Tracks all shared expenses with complete transparency, avoiding screenshot-based confusion.
+
+Overseas Integration
+OFWs can send funds directly to a family wallet and tag remittances by purpose. Families can upload receipts for clarity and trust.
+
+Smart Budgets and Reminders
+Set monthly budgets and receive insights when nearing spending limits. Promotes responsible group financial habits.
+
+Unique Value Proposition
+
+GCash Groups with ChibogPay creates a social and family-centered financial management system, enabling transparent, automatic, and emotionally connected expense sharing. It removes uncertainty around payments and builds trust within groups.
+
+Everyday Use Cases
+
+Barkada trips
+
+Roommates sharing rent and utilities
+
+Families managing household budgets
+
+OFWs sending money with visibility
+
+Food-related expense splitting
+
+Market Potential
+
+Millions of Filipinos share expenses regularly, and over two million OFWs send monthly remittances. GCash’s core users — students, workers, and parents — have frequent shared financial responsibilities, making this feature highly relevant.
+
+Expansion Opportunities
+
+Group savings goals
+
+Group rewards and cashback
+
+Community wallets
+
+Partnerships with remittance providers
+
+Core Idea
+
+GCash Groups with ChibogPay brings cultural values of bayanihan and family cooperation into digital finance, turning everyday transactions into collaborative and connected experiences.

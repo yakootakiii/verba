@@ -1,0 +1,420 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #fafaf8;
+    color: #2b2b2b;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #e8e6e1;
+    padding: 1.5rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #2b2b2b;
+    letter-spacing: 0.5px;
+}
+
+nav {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #5a5a5a;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #2b2b2b;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(180deg, #f5f4f0 0%, #fafaf8 100%);
+    padding: 8rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid #e8e6e1;
+}
+
+.hero h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #2b2b2b;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #6a6a6a;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+.btn-primary {
+    background: #2b2b2b;
+    color: #fafaf8;
+    padding: 0.875rem 2.5rem;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: #1a1a1a;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+/* Feed List */
+.piece {
+    margin-bottom: 4rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.piece:hover {
+    opacity: 0.7;
+}
+
+.piece-meta {
+    font-size: 0.85rem;
+    color: #8a8a8a;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.3px;
+}
+
+.piece h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #2b2b2b;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.piece-excerpt {
+    font-size: 1rem;
+    color: #5a5a5a;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.divider {
+    height: 1px;
+    background: #e8e6e1;
+    margin: 4rem 0;
+}
+
+/* Reading View */
+.reading-view {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+.back-btn {
+    color: #8a8a8a;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 3rem;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    color: #2b2b2b;
+}
+
+.reading-title {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.reading-author {
+    font-size: 1rem;
+    color: #6a6a6a;
+    margin-bottom: 3rem;
+}
+
+.reading-content {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #3a3a3a;
+    margin-bottom: 4rem;
+}
+
+.reading-content p {
+    margin-bottom: 1.5rem;
+}
+
+.annotation-marker {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #d4a574;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(43, 43, 43, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: #ffffff;
+    max-width: 500px;
+    width: 90%;
+    padding: 3rem;
+    position: relative;
+}
+
+.modal h3 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.modal p {
+    color: #5a5a5a;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.modal-question {
+    margin-bottom: 2rem;
+}
+
+.modal-question label {
+    display: block;
+    font-size: 0.95rem;
+    color: #5a5a5a;
+    margin-bottom: 0.75rem;
+}
+
+.modal-question textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e8e6e1;
+    background: #fafaf8;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    resize: vertical;
+    min-height: 80px;
+}
+
+.modal-question textarea:focus {
+    outline: none;
+    border-color: #c4c2bc;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-secondary {
+    background: none;
+    border: 1px solid #d8d6d1;
+    color: #5a5a5a;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    border-color: #2b2b2b;
+    color: #2b2b2b;
+}
+
+/* Comments */
+.comments-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid #e8e6e1;
+}
+
+.comments-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.comments-header h3 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.add-comment-btn {
+    background: none;
+    border: 1px solid #d8d6d1;
+    color: #5a5a5a;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+.add-comment-btn:hover {
+    border-color: #2b2b2b;
+    color: #2b2b2b;
+}
+
+.comment {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #f0eee9;
+}
+
+.comment:last-child {
+    border-bottom: none;
+}
+
+.comment-header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.comment-author {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.comment-time {
+    color: #8a8a8a;
+    font-size: 0.85rem;
+}
+
+.comment-text {
+    color: #4a4a4a;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.comment-reply {
+    margin-left: 2.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #f0eee9;
+}
+
+/* Profile */
+.profile-header {
+    text-align: center;
+    padding: 4rem 0;
+    border-bottom: 1px solid #e8e6e1;
+    margin-bottom: 4rem;
+}
+
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #e8e6e1;
+    margin: 0 auto 1.5rem;
+}
+
+.profile-name {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.profile-bio {
+    color: #5a5a5a;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.works-list h3 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.work-item {
+    margin-bottom: 2.5rem;
+    cursor: pointer;
+}
+
+.work-item h4 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.work-date {
+    color: #8a8a8a;
+    font-size: 0.85rem;
+}
