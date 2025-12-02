@@ -15,7 +15,7 @@
                 <a href="{{ route('home') }}">Home</a>
                 <a href="{{ route('feed') }}">Explore</a>
                 <a href="{{ route('profile') }}">About</a>
-                <a href="#">Sign In</a>
+                <a href="{{ route('login') }}">Sign In</a>
             </nav>
         </div>
     </header>

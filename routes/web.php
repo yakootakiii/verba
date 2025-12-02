@@ -17,3 +17,11 @@ Route::get('/profile', function () {
 Route::get('/reading', function () {
     return view('reading');
 })->name('reading');
+
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
+
+Route::get('/register', function () {
+    return view('auth.register');
+})->name('register');
