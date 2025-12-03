@@ -8,9 +8,9 @@
 </p>
 
 to use, run:
-php artisan migrate 
-php artisan migrate —-seed
-php artisan serve
+- php artisan migrate 
+- php artisan migrate —-seed
+- php artisan serve
 
 ## About Laravel
 
