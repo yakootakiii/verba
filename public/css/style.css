@@ -514,3 +514,17 @@ input {
 .toggle-password:hover {
     color: #000;
 }
+
+.error-box {
+    background: #ffe1e1;
+    color: #b30000;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+.error-box ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.no-posts { text-align: center; margin: 40px auto; font-size: 1.3em; color: #888; }

@@ -14,9 +14,34 @@
             <nav>
                 <a href="{{ route('home') }}">Home</a>
                 <a href="{{ route('feed') }}">Explore</a>
-                <a href="{{ route('profile') }}">About</a>
-                <a href="{{ route('login') }}">Sign In</a>
+
+                @auth
+                    <a href="{{ route('profile') }}">Profile</a>
+
+                    <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+                        @csrf
+                        <button 
+                            type="submit" 
+                            style="
+                                background: #b80000; 
+                                color: white; 
+                                padding: 6px 14px; 
+                                border-radius: 6px; 
+                                border: none; 
+                                cursor: pointer;
+                                font-family: Inter, sans-serif;
+                            "
+                        >
+                            Logout
+                        </button>
+                    </form>
+                @endauth
+
+                @guest
+                    <a href="{{ route('login') }}">Sign In</a>
+                @endguest
             </nav>
+
         </div>
     </header>
 
