@@ -12,11 +12,15 @@
         <div class="header-content">
             <div class="logo">Verba</div>
             <nav>
-                <a href="{{ route('home') }}">Home</a>
-                <a href="{{ route('feed') }}">Explore</a>
+                <a href="{{ route('feed') }}">Home</a>
+                <a href="{{ route('home') }}">Explore</a>
 
                 @auth
                     <a href="{{ route('profile') }}">Profile</a>
+
+                        @if(auth()->user()->role === 'admin')
+                            <a href="{{ route('admin.writer.applications') }}">Writer Requests</a>
+                        @endif
 
                     <form action="{{ route('logout') }}" method="POST" style="display:inline;">
                         @csrf

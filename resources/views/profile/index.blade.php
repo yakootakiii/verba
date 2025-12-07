@@ -10,19 +10,30 @@
         <p class="profile-bio">
             {{ $user->bio ?? 'No bio provided yet.' }}
         </p>
+
+        <!-- Create New Post Button -->
+        @if (auth()->check() && in_array(auth()->user()->role, ['writer', 'admin']))
+            <a href="{{ route('works.create') }}" class="btn btn-primary mt-3">
+                Create New Post
+            </a>
+        @endif
+
+        <!-- Edit Profile Button -->
+        @if (auth()->id() === $user->id)
+            <button class="btn btn-secondary mt-2" onclick="openProfileModal()">
+                Edit Profile
+            </button>
+        @endif
     </div>
 
-    <div class="works-list">
+    <div class="works-list mt-4">
         <h3>Published Works</h3>
 
         @if ($works->isEmpty())
             <p>You haven't published any works yet.</p>
         @else
             @foreach ($works as $work)
-                <div 
-                    class="work-item" 
-                    onclick="window.location='{{ route('reading', $work->slug) }}'"
-                >
+                <div class="work-item" onclick="window.location='{{ route('reading', $work->slug) }}'">
                     <h4>{{ $work->title }}</h4>
 
                     <div class="work-date">
@@ -30,9 +41,71 @@
                     </div>
                 </div>
 
+                <!-- Edit + Delete Buttons (only for the owner) -->
+                @if (auth()->id() === $work->author_id)
+                    <div class="profile-actions">
+
+                        <!-- EDIT BUTTON -->
+                        <a href="{{ route('works.edit', $work->id) }}" class="edit-btn">Edit</a>
+
+                        <!-- DELETE BUTTON -->
+                        <button class="delete-btn" onclick="openDeleteModal({{ $work->id }})">
+                            Delete
+                        </button>
+
+                        <!-- Hidden Delete Form -->
+                        <form id="delete-form-{{ $work->id }}" 
+                            action="{{ route('works.destroy', $work->id) }}" 
+                            method="POST">
+                            @csrf
+                            @method('DELETE')
+                        </form>
+                    </div>
+                @endif
+
                 <div class="divider"></div>
             @endforeach
         @endif
     </div>
 </div>
+
+<!-- DELETE CONFIRMATION MODAL -->
+<div id="delete-modal" class="modal-overlay hidden">
+    <div class="modal-box">
+        <h3 class="modal-title">Delete This Post?</h3>
+        <p class="modal-text">Are you sure you want to delete this post? This action cannot be undone.</p>
+
+        <div class="modal-buttons">
+            <button class="modal-cancel" onclick="closeDeleteModal()">Cancel</button>
+            <button class="modal-confirm" id="modal-confirm-delete">Delete</button>
+        </div>
+    </div>
+</div>
+
+<!-- EDIT PROFILE MODAL -->
+<div id="profile-modal" class="modal-overlay hidden">
+    <div class="modal-box">
+        <h3 class="modal-title">Edit Profile</h3>
+
+        <form id="profile-form" method="POST" action="{{ route('profile.update', $user->id) }}">
+            @csrf
+            @method('PUT')
+
+            <label>Name</label>
+            <input type="text" name="name" class="modal-input" value="{{ $user->name }}" required>
+
+            <label>Bio</label>
+            <textarea name="bio" class="modal-textarea" rows="4">{{ $user->bio }}</textarea>
+
+            <label>Password (required to confirm changes)</label>
+            <input type="password" name="password" class="modal-input" required>
+
+            <div class="modal-buttons">
+                <button type="button" class="modal-cancel" onclick="closeProfileModal()">Cancel</button>
+                <button type="submit" class="modal-confirm">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+
 @endsection

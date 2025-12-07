@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->enum('role', ['reader', 'writer', 'admin'])->default('reader');
+            $table->text('bio')->nullable(); // <-- ADD THIS
             $table->timestamps();
         });
     }
