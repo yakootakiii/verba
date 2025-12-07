@@ -67,6 +67,33 @@
             @endforeach
         @endif
     </div>
+
+    <!-- APPLY AS WRITER BUTTON (only for readers) -->
+    @if(auth()->check() && auth()->user()->role === 'reader')
+        <div class="apply-writer mt-5 text-center">
+            <button class="btn btn-primary" onclick="openWriterModal()">Become a Writer</button>
+        </div>
+
+        <!-- WRITER APPLICATION MODAL -->
+        <div id="writer-modal" class="modal-overlay hidden">
+            <div class="modal-box">
+                <h3 class="modal-title">Apply to Become a Writer</h3>
+                <p>Tell us why you want to become a writer. Your application will be sent to the admin for approval.</p>
+
+                <form action="{{ route('writer.apply') }}" method="POST">
+                    @csrf
+                    <label for="reason">Reason</label>
+                    <textarea name="reason" id="reason" rows="4" class="modal-textarea" required></textarea>
+
+                    <div class="modal-buttons mt-3">
+                        <button type="button" class="modal-cancel" onclick="closeWriterModal()">Cancel</button>
+                        <button type="submit" class="modal-confirm">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    @endif
+
 </div>
 
 <!-- DELETE CONFIRMATION MODAL -->

@@ -59,3 +59,10 @@ function openProfileModal() {
 function closeProfileModal() {
     document.getElementById("profile-modal").classList.add("hidden");
 }
+
+function openWriterModal() {
+    document.getElementById('writer-modal').classList.remove('hidden');
+}
+function closeWriterModal() {
+    document.getElementById('writer-modal').classList.add('hidden');
+}

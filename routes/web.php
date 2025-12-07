@@ -94,3 +94,6 @@ Route::middleware(['auth'])->group(function () {
     });
 
 });
+
+
+Route::post('/writer/apply', [WriterApplicationController::class, 'store'])->name('writer.apply')->middleware('auth');
