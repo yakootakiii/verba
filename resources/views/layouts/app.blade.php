@@ -13,7 +13,7 @@
             <div class="logo">Verba</div>
             <nav>
                 <a href="{{ route('feed') }}">Home</a>
-                <a href="{{ route('home') }}">Explore</a>
+                <a href="{{ route('search') }}">Explore</a>
 
                 @auth
                     <a href="{{ route('profile') }}">Profile</a>

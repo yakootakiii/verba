@@ -4,7 +4,7 @@
 <div class="container">
     <div class="feed-list">
         {{-- Search Bar --}}
-        <form action="{{ route('search.results') }}" method="GET" class="search-bar-wrapper" style="margin-bottom: 25px;">
+        <form action="{{ route('search') }}" method="GET" class="search-bar-wrapper" style="margin-bottom: 25px;">
             <input 
                 type="text" 
                 name="q" 
@@ -31,7 +31,7 @@
 
         {{-- Filter Section --}}
         <div class="filter-wrapper" style="margin-bottom: 25px;">
-            <form action="{{ route('search.results') }}" method="GET" class="filter-form" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <form action="{{ route('search') }}" method="GET" class="filter-form" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
                 <input type="hidden" name="q" value="{{ request('q') }}">
                 <input type="hidden" name="category" value="{{ request('category') }}">
                 <label for="sort" class="form-label" style="margin-bottom: 0;">Sort by:</label>

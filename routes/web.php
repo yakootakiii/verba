@@ -23,9 +23,9 @@ use App\Http\Controllers\CommentController;
 // STARTING PAGE → FEED
 Route::get('/', [WorkController::class, 'feed'])->name('feed');
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
+// Route::get('/search', function () {
+//     return view('search');
+// })->name('search');
 
 
 // AUTH PAGES
@@ -79,7 +79,7 @@ Route::middleware('auth')->group(function () {
 | SEARCH
 |--------------------------------------------------------------------------
 */
-Route::get('/search', [SearchController::class, 'index'])->name('search.results');
+Route::get('/search', [SearchController::class, 'index'])->name('search');
 
 /*
 |--------------------------------------------------------------------------
