@@ -298,6 +298,77 @@ nav a:hover {
 }
 
 /* =========================
+   Reading Comments Custom Styles
+   ========================= */
+.comment-block {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.comment-left-border {
+    width: 4px;
+    min-width: 4px;
+    height: 100%;
+    background: #e8e6e1;
+    border-radius: 3px;
+    margin-right: 1.5rem;
+}
+
+.comment-body {
+    flex: 1;
+}
+
+.comment-dot {
+    color: #bbb;
+    margin: 0 0.5rem;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+
+.no-comments {
+    color: #888;
+    text-align: center;
+    margin: 2rem 0 3rem 0;
+    font-size: 1.1em;
+}
+
+.comment-textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e8e6e1;
+    background: #fafaf8;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    border-radius: 8px;
+    min-height: 80px;
+    margin-bottom: 1.2rem;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: #000;
+    color: #fff;
+    padding: 10px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.submit-btn:hover {
+    background: #333;
+}
+
+.no-work-message {
+    text-align: center;
+    margin: 40px auto;
+    font-size: 1.3em;
+    color: #888;
+}
+
+/* =========================
    Profile
    ========================= */
 .profile-header {
@@ -647,4 +718,82 @@ input {
 
 .modal-confirm:hover {
     background: #000;
+}
+
+/* =========================
+   Comment Menu (Three Dot)
+   ========================= */
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-header-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.comment-menu-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.comment-menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 1.2em;
+    color: #888;
+    transition: background 0.15s;
+}
+
+.comment-menu-btn:hover {
+    background: #f4f4f4;
+}
+
+.comment-menu-icon {
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
+.comment-menu-dropdown {
+    position: absolute;
+    right: 0;
+    top: 28px;
+    background: #fff;
+    border: 1px solid #e8e6e1;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    min-width: 100px;
+    z-index: 10;
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.comment-menu-dropdown.hidden {
+    display: none;
+}
+
+.comment-menu-delete {
+    background: none;
+    border: none;
+    color: #d11a2a;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
+    border-radius: 4px;
+    transition: background 0.15s;
+}
+
+.comment-menu-delete:hover {
+    background: #ffe1e1;
 }

@@ -8,6 +8,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WorkController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\Admin\WriterApplicationController;
+use App\Http\Controllers\CommentController;
+
+
+
 
 
 /*
@@ -97,3 +101,12 @@ Route::middleware(['auth'])->group(function () {
 
 
 Route::post('/writer/apply', [WriterApplicationController::class, 'store'])->name('writer.apply')->middleware('auth');
+
+Route::middleware('auth')->group(function () {
+    Route::post('/works/{id}/comments', [CommentController::class, 'store'])
+        ->name('comments.store');
+});
+
+
+Route::delete('/comments/{comment}', [App\Http\Controllers\CommentController::class, 'destroy'])->name('comments.destroy');
+Route::resource('comments', CommentController::class);
