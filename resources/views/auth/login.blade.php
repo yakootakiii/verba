@@ -44,6 +44,6 @@
 
     <p class="switch-text">Don't have an account? <a href="{{ route('register') }}">Join us</a></p>
 
-    <a class="back-link" href="{{ route('home') }}">← Back to Home</a>
+    <a class="back-link" href="{{ route('feed') }}">← Back to Home</a>
 </div>
 @endsection

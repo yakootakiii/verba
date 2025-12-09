@@ -68,6 +68,6 @@
 
     <p class="switch-text">Already have an account? <a href="{{ route('login') }}">Sign in</a></p>
 
-    <a class="back-link" href="{{ route('home') }}">← Back to Home</a>
+    <a class="back-link" href="{{ route('feed') }}">← Back to Home</a>
 </div>
 @endsection

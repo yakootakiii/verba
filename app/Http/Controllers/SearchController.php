@@ -12,30 +12,31 @@ class SearchController extends Controller
     {
         $query = Work::query();
 
-        // Keyword search
+        // FULL-TEXT SEARCH
         if ($request->q) {
-            $query->where(function ($q) use ($request) {
-                $q->where('title', 'like', '%' . $request->q . '%')
-                ->orWhere('body', 'like', '%' . $request->q . '%');
-            });
+            // Convert query to tsquery (AND search + prefix search)
+            $tsquery = implode(' & ', explode(' ', $request->q)) . ':*';
+
+            $query->selectRaw("works.*, ts_rank(fts, to_tsquery('english', ?)) AS rank", [$tsquery])
+                ->whereRaw("fts @@ to_tsquery('english', ?)", [$tsquery])
+                ->orderByDesc('rank');
+        } else {
+            // Fallback sorting if no search query
+            if ($request->sort === 'oldest') {
+                $query->orderBy('published_at', 'asc');
+            } else {
+                $query->orderBy('published_at', 'desc');
+            }
         }
 
-        // Category filter
+        // Category filter (optional)
         if ($request->category) {
             $query->whereHas('category', function ($q) use ($request) {
                 $q->where('slug', $request->category);
             });
         }
 
-        // Sorting
-        if ($request->sort === 'oldest') {
-            $query->orderBy('published_at', 'asc');
-        } else {
-            $query->orderBy('published_at', 'desc');
-        }
-
-        return view('search.index', [
-            'categories' => Category::all(),
+        return view('search', [
             'results' => $query->get(),
         ]);
     }

@@ -14,21 +14,6 @@
             >
         </form>
 
-        {{-- Categories --}}
-        <div class="categories" style="margin-bottom: 25px;">
-            <h3 class="form-label" style="margin-bottom: 10px;">Categories</h3>
-            <div class="category-list" style="display: flex; gap: 10px; flex-wrap: wrap;">
-                {{-- @foreach($categories as $category)
-                    <a 
-                        href="{{ route('search.results', ['category' => $category->slug]) }}"
-                        class="category-tag"
-                    >
-                        {{ $category->name }}
-                    </a>
-                @endforeach --}}
-            </div>
-        </div>
-
         {{-- Filter Section --}}
         <div class="filter-wrapper" style="margin-bottom: 25px;">
             <form action="{{ route('search') }}" method="GET" class="filter-form" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
